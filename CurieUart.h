@@ -13,7 +13,7 @@
 #ifndef __CurieUart_h__
 #define __CurieUart_h__
 
-#include <CurieBle.h>
+#include <CurieBLE.h>
 
 class CurieUart
 {

@@ -11,7 +11,7 @@
 //
 /*****************************************************************************/
 
-#include <CurieBle.h>
+#include <CurieBLE.h>
 #include "CurieUart.h"
 
 CurieUart uart("dojoCurie");    // Create a named UART peripheral
