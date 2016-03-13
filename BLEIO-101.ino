@@ -13,6 +13,9 @@
 
 #include <CurieBLE.h>
 #include <CurieUart.h>
+#include <CuriePing.h>
+
+CuriePing pinger(2, 3);
 
 CurieUart uart("dojoCurie");    // Create a named UART peripheral
 String str;                     // Data read from the local serial input
@@ -60,7 +63,11 @@ void loop()
         data = uart.getString();
         Serial.print("<-- ");
         Serial.println(data);
-        String ret{"Got: " + data};
+
+        int dist = pinger.ping();
+        String ret{">" + data};
+        uart.sendString(ret);
+        ret = "dst=" + String(dist);
         uart.sendString(ret);
       } 
     }
