@@ -12,7 +12,7 @@
 /*****************************************************************************/
 
 #include <CurieBLE.h>
-#include "CurieUart.h"
+#include <CurieUart.h>
 
 CurieUart uart("dojoCurie");    // Create a named UART peripheral
 String str;                     // Data read from the local serial input
@@ -60,6 +60,8 @@ void loop()
         data = uart.getString();
         Serial.print("<-- ");
         Serial.println(data);
+        String ret{"Got: " + data};
+        uart.sendString(ret);
       } 
     }
 
